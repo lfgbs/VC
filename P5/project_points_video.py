@@ -16,7 +16,7 @@ with np.load('camera.npz') as params:
     intrinsics= params["intrinsics"]
     distortion=params["distortion"]
 
-#print(intrinsics, distortion)
+print(intrinsics, distortion)
 
 while True:
     ret, frame= capture.read()
@@ -30,8 +30,8 @@ while True:
         ret, rvec, tvec = cv2.solvePnP(objp, corners ,intrinsics, distortion)
 
         #projeção cubo em imagem
-        cubo=np.float32([[0,0,0],[0,0,-1], [1,0,-1], [1,0,0], 
-                        [0,1,0], [0,1,-1], [1,1,-1], [1,1,0]]).reshape(-1,3)
+        cubo=np.float32([[0,0,0],[0,0,-2], [2,0,-2], [2,0,0], 
+                        [0,2,0], [0,2,-2], [2,2,-2], [2,2,0]]).reshape(-1,3)
     
         point_projection, jac=cv2.projectPoints(cubo, rvec, tvec, intrinsics, distortion)
         

@@ -3,7 +3,7 @@ import cv2
 import argparse
 
 def gaussian_blur(img, ksize):
-    return cv2.Gaussian_Blur(img,ksize)
+    return cv2.GaussianBlur(img,(ksize, ksize),0)
 
 def blur_ntimes(img, ksize, ntimes):
 
@@ -25,13 +25,13 @@ def main():
     blur3x3=gaussian_blur(image, 3)
     blur5x5=gaussian_blur(image, 5)
     blur7x7=gaussian_blur(image, 7)
-    #blur3x3_3times=blur_ntimes(image, 3, 3)
+    blur3x3_3times=blur_ntimes(image, 7, 3)
 
     cv2.imshow('original', image)
     cv2.imshow('3x3', blur3x3)
     cv2.imshow('5x5', blur5x5)
     cv2.imshow('7x7', blur7x7)
-    #cv2.imshow('7x7 3 times', blur3x3_3times)
+    cv2.imshow('7x7 3 times', blur3x3_3times)
 
     cv2.waitKey(0)
 

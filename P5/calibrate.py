@@ -36,6 +36,7 @@ def main():
 
     while True:
         ret, frame=capture.read()
+        frame = cv2.flip(frame, 1)  # the second arguments value of 1 indicates that we want to flip horizontally
 
         cv2.imshow('frame', frame)
         key = cv2.waitKey(1)

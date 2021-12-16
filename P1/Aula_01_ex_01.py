@@ -12,7 +12,7 @@ import cv2
 import sys
 
 # Read the image
-image = cv2.imread( sys.argv[1], cv2.IMREAD_UNCHANGED );
+image = cv2.imread( sys.argv[1], cv2.IMREAD_UNCHANGED )
 
 
 if  np.shape(image) == ():
@@ -21,7 +21,7 @@ if  np.shape(image) == ():
 	exit(-1)
 
 # Image characteristics
-height, width = image.shape
+height, width, _ = image.shape
 
 print("Image Size: (%d,%d)" % (height, width))
 print("Image Type: %s" % (image.dtype))
@@ -35,7 +35,7 @@ cv2.namedWindow( "Display window", cv2.WINDOW_AUTOSIZE )
 cv2.imshow( "Display window", image )
 
 # Wait
-cv2.waitKey( 0 );
+cv2.waitKey( 0 )
 
 # Destroy the window -- might be omitted
 cv2.destroyWindow( "Display window" )
