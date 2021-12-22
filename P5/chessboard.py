@@ -84,10 +84,7 @@ print(img)
 cubo=np.float32([[0,0,0],[0,0,-1], [1,0,-1], [1,0,0], 
                   [0,1,0], [0,1,-1], [1,1,-1], [1,1,0]]).reshape(-1,3)
 point_projection, jac=cv2.projectPoints(cubo, rvecs[index], tvecs[index], mtx, dist)
-print("point projection")
-print(point_projection)
-print(point_projection[0][0])
- 
+
 cv2.line(img, tuple(point_projection[0][0]), tuple(point_projection[1][0]), (0,0,255))
 cv2.line(img, tuple(point_projection[1][0]), tuple(point_projection[2][0]), (255,0,0))
 cv2.line(img, tuple(point_projection[2][0]), tuple(point_projection[3][0]), (0,255,0))

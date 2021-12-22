@@ -14,6 +14,7 @@ from functools import partial
 def grid(img, cell_size,w_name):
     color=(0,0,0)
     dimensions = img.shape
+    print(dimensions)
 
     if len(dimensions)<3:
         color=(255,255,255)

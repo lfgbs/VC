@@ -18,8 +18,9 @@ def main():
 
     # Image characteristics
     if len (image.shape) > 2:
-        print ("The loaded image is NOT a GRAY-LEVEL image !")
-        exit(-1)
+        #print ("The loaded image is NOT a GRAY-LEVEL image !")
+        #exit(-1)
+        image = cv2.cvtColor(image , cv2.COLOR_BGR2GRAY)
 
     cv2.imshow("Original Image", image)
 
@@ -69,14 +70,9 @@ def main():
     # ATTENTION : Y coordinate upside down
     histImage = np.flipud(histImage)
 
+    cv2.imshow("stretched Image", stretched_img)
     cv2.imshow('colorhist', histImage)
     cv2.waitKey(0)
-
-    ##########################
-    # Drawing using matplotlib
-    plt.plot(hist_item,'r')
-    plt.xlim(histRange)
-    plt.show()
 
 if __name__ == '__main__':
     main()

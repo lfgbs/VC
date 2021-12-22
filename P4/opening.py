@@ -12,9 +12,6 @@ def main():
     #converting to binary with threshold of 120
     retval, img_thresholded = cv2.threshold(image, 120, 255, cv2.THRESH_BINARY)
 
-    #inverting image
-    image = cv2.bitwise_not(img_thresholded)
-
     #circular Structuring 
     circular_struct_point=cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(11,11))
 

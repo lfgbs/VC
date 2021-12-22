@@ -22,10 +22,10 @@ def main():
     square_struct_point = np.ones((11,11), np.uint8)
 
     #11x1 structuring point
-    struct_point_11x1=cv2.getStructuringElement(cv2.MORPH_RECT,(11,1))
+    struct_point_11x1=cv2.getStructuringElement(cv2.MORPH_RECT,(11, 1))
 
     #skewed anchor
-    skewed_anchor_struct=cv2.getStructuringElement(cv2.MORPH_RECT,(3,3), anchor=(1,2))
+    skewed_anchor_struct=cv2.getStructuringElement(cv2.MORPH_RECT,(11,11), anchor=(1,2))
 
 
     circular_img_erosion = cv2.erode(image, circular_struct_point, iterations=1)

@@ -60,18 +60,15 @@ def main():
     filtered_coords=[]
 
     for i in range(coords_3d.shape[0]):
-       if np.all(~np.isinf(coords_3d[i])) and coords_3d[i][2]>0.2 and coords_3d[i][2]<3:
+       if np.all(~np.isinf(coords_3d[i])) and coords_3d[i][2]>1 and coords_3d[i][2]<3:
            filtered_coords.append(coords_3d[i])
 
     pcd = o3d.geometry.PointCloud()
     pcd.points=o3d.utility.Vector3dVector(filtered_coords)
+    o3d.visualization.draw_geometries([pcd])
 
     cv2.imshow("image left", left_image)
     cv2.imshow("Disparity Map", disp)
-    
-    o3d.visualization.draw_geometries([pcd])
-
-    #cv2.setMouseCallback("remapped left", partial(onMouse, remapped_right=remapped_right,remapped_left=remapped_left, width=w, F=F))
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()

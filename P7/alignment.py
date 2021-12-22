@@ -25,7 +25,11 @@ def main():
     pcd_target = o3d.io.read_point_cloud(args.target)
     threshold=1
 
-    trans_init = np.identity(4)
+    #trans_init = np.identity(4)
+
+    trans_init = np.asarray([[0.862, 0.011, -0.507, 0.5],
+                             [-0.139, 0.967, -0.215, 0.7],
+                             [0.487, 0.255, 0.835, -1.4], [0.0, 0.0, 0.0, 1.0]])
 
     print(trans_init)
 

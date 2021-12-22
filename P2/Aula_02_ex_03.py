@@ -29,7 +29,7 @@ cv2.namedWindow("Original Image")
 cv2.imshow("Original Image", image)
 
 # print some features
-height, width = image.shape
+height, width = image.shapeq
 nchannels = 1
 print("Image Size: (%d,%d)" % (height, width))
 print("Image Type: %d" % nchannels)
@@ -68,13 +68,6 @@ histImage = np.flipud(histImage)
 
 cv2.imshow('colorhist', histImage)
 cv2.waitKey(0)
-
-##########################
-# Drawing using matplotlib
-plt.plot(hist_item,'r')
-plt.xlim(histRange)
-plt.show()
-
 
 
 

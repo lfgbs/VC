@@ -46,7 +46,10 @@ if __name__ == "__main__":
         if key == ord("q"):
             break
         if key == ord("p"):
-            pcd=get_pointcloud(depth)
-            o3d.io.write_point_cloud("clouds/test.pcd", pcd)
+            depth_img=get_depth
+            print(depth_img)
+            print(depth_img.shape[0])
+            #pcd=get_pointcloud(depth)
+            #o3d.io.write_point_cloud("clouds/test.pcd", pcd)
 
     cv2.destroyAllWindows()
